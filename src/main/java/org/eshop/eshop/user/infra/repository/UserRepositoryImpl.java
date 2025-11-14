@@ -2,21 +2,21 @@ package org.eshop.eshop.user.infra.repository;
 
 import jakarta.transaction.Transactional;
 import org.eshop.eshop.user.domain.entities.User;
-import org.eshop.eshop.user.domain.repository.UserRepository;
+import org.eshop.eshop.user.domain.repository.IUserRepository;
 import org.eshop.eshop.user.domain.valueObjects.Email;
 import org.eshop.eshop.user.domain.valueObjects.Password;
 import org.eshop.eshop.user.infra.entity.UserJpaEntity;
-import org.eshop.eshop.user.infra.jpa.UserJpaRepository;
+import org.eshop.eshop.user.infra.jpa.IUserJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository {
-    private final UserJpaRepository jpa;
+public class UserRepositoryImpl implements IUserRepository {
+    private final IUserJpaRepository jpa;
 
-    public UserRepositoryImpl(UserJpaRepository jpa) {
+    public UserRepositoryImpl(IUserJpaRepository jpa) {
         this.jpa = jpa;
     }
 
